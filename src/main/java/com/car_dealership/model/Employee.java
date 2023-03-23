@@ -41,12 +41,12 @@ public class Employee {
     }
 
     private void purchaseNotCompleted(Vehicle vehicle) {
-        System.out.println("Client needs some cash for buying the vehicle " + vehicle.getModel());
+        System.out.println("Client needs some cash for buying the " + vehicle.toString());
     }
 
     private void processTransaction(Customer customer, Vehicle vehicle) {
         System.out.println("Customer "+customer.getName()+" has purchase the vehicle: "
-        + vehicle.getModel() + " for the price $" + String.format("%.2f", vehicle.getValue())
+        + vehicle.toString() + " for the price $" + String.format("%.2f", vehicle.getValue())
         + "\n Congratulations, " + this.getName()
         + " YOUR COMMISSION IS: $" + String.format("%.2f", vehicle.getValue() * this.comission) );
     }

@@ -29,5 +29,8 @@ public class Dealership {
         employee = new Employee("Doug", .05f);
 
         customer.purchaseCar(vehicle, employee, false);
+
+        Vehicle vehicle2 = new Vehicle("NA", "Honda", "Accord", 2020, 10000);
+        System.out.println("\n " + vehicle.equals(vehicle2));
     }
 }

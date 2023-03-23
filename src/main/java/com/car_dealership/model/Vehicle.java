@@ -1,5 +1,7 @@
 package com.car_dealership.model;
 
+import java.util.Objects;
+
 public class Vehicle {
     private String type;
     private String brand;
@@ -13,6 +15,29 @@ public class Vehicle {
         this.model = model;
         this.year = year;
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle {" +
+                "type='" + type + '\'' +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", year=" + year +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vehicle vehicle = (Vehicle) o;
+        return year == vehicle.year && Double.compare(vehicle.value, value) == 0 && Objects.equals(type, vehicle.type) && Objects.equals(brand, vehicle.brand) && Objects.equals(model, vehicle.model);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, brand, model, year, value);
     }
 
     public String getType() {
