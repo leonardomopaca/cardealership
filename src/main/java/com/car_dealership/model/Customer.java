@@ -36,4 +36,7 @@ public class Customer {
     }
 
 
+    public void purchaseCar(Vehicle vehicle, Employee employee, boolean finance){
+        employee.handleCustomer(this, finance, vehicle);
+    }
 }
